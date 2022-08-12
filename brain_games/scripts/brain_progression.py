@@ -36,7 +36,7 @@ def check(answer, correct, attempt):
 
     else:
         print(f"{answer} is wrong answer ;(. Correct answer was {correct}."
-              f"\nLet's try again, Bill!")
+              f"\nLet's try again, {name}!")
 
 
 if __name__ == '__main__':
