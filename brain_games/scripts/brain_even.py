@@ -1,15 +1,26 @@
 #!/usr/bin/env python
-
 import prompt
-from random import randint,choice
-from brain_games.games.brain_calc import main
+from random import randint
 
 
-def engine():
+def is_even(digit):
+    return True if digit % 2 == 0 else False
+
+
+def main():
     print('Welcome to the Brain Games!')
     global name
     name = prompt.string('May I have your name? ')
     print(f'Hello, {name}!')
+    print('Answer "yes" if the number is even, otherwise answer "no".')
+    brain_even(1)
+
+
+def brain_even(attempt):
+    digit = randint(1, 100)
+    answer = prompt.string(f'Question: {digit}\n')
+    correct = 'yes' if digit % 2 == 0 else 'no'
+    check(answer, correct, attempt)
 
 
 def check(answer, correct, attempt):
@@ -23,6 +34,7 @@ def check(answer, correct, attempt):
     else:
         print(f"{answer} is wrong answer ;(. Correct answer was {correct}."
         f"\nLet's try again, Bill!")
+
 
 
 if __name__ == '__main__':
