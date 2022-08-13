@@ -1,7 +1,5 @@
 import prompt
-from random import randint, choice
-
-name = ''
+from random import randint
 
 
 def main():
@@ -9,34 +7,23 @@ def main():
     global name
     name = prompt.string('May I have your name? ')
     print(f'Hello, {name}!')
-    print('What is the result of the expression?')
-    brain_calc(1)
+    print('What number is missing in the progression?')
+    brain_progression(1)
 
 
-def plus(a, b):
-    return a+b
+def brain_progression(attempt):
+    num_1 = randint(1, 10)
+    num_2 = randint(40, 100)
+    step = randint(2, 10)
 
+    progression = list(range(num_1, num_2, step))
+    point_num = randint(0, len(progression)-1)
+    correct = str(progression[point_num])
 
-def minus(a, b):
-    return a-b
-
-
-def mult(a, b):
-    return a*b
-
-
-def brain_calc(attempt):
-    num_1 = randint(1, 100)
-    num_2 = randint(1, 100)
-    functions = {
-        '+': plus(num_1, num_2),
-        '-': minus(num_1, num_2),
-        '*': mult(num_1, num_2)
-        }
-    operation = choice(list(functions.keys()))
-    correct = str(functions[operation])
-    print(f'Question: {num_1} {operation} {num_2}\n')
+    progression[point_num] = '..'
+    print(f'Question: {progression}\n')
     answer = prompt.string('Your answer: ')
+
     check(answer, correct, attempt)
 
 
@@ -47,7 +34,7 @@ def check(answer, correct, attempt):
     elif answer == correct:
         print('Correct!')
         attempt += 1
-        brain_calc(attempt)
+        brain_progression(attempt)
 
     else:
         print(f"{answer} is wrong answer ;(. Correct answer was {correct}."

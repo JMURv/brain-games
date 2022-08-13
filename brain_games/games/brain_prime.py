@@ -1,10 +1,5 @@
-#!/usr/bin/env python
 import prompt
 from random import randint
-
-
-def is_even(digit):
-    return True if digit % 2 == 0 else False
 
 
 def main():
@@ -12,14 +7,24 @@ def main():
     global name
     name = prompt.string('May I have your name? ')
     print(f'Hello, {name}!')
-    print('Answer "yes" if the number is even, otherwise answer "no".')
-    brain_even(1)
+    print('Answer "yes" if given number is prime. Otherwise answer "no".')
+    brain_prime(1)
 
 
-def brain_even(attempt):
-    digit = randint(1, 100)
-    answer = prompt.string(f'Question: {digit}\n')
-    correct = 'yes' if digit % 2 == 0 else 'no'
+def is_prime(a):
+    if a % 2 == 0:
+        return a == 2
+    d = 3
+    while d * d <= a and a % d != 0:
+        d += 2
+    return d * d > a
+
+
+def brain_prime(attempt):
+    num_1 = randint(1, 100)
+    correct = 'yes' if is_prime(num_1) is True else 'no'
+    print(f'Question: {num_1}\n')
+    answer = prompt.string('Your answer: ')
     check(answer, correct, attempt)
 
 
@@ -30,11 +35,11 @@ def check(answer, correct, attempt):
     elif answer == correct:
         print('Correct!')
         attempt += 1
-        brain_even(attempt)
+        brain_prime(attempt)
+
     else:
         print(f"{answer} is wrong answer ;(. Correct answer was {correct}."
-        f"\nLet's try again, {name}!")
-
+              f"\nLet's try again, {name}!")
 
 
 if __name__ == '__main__':

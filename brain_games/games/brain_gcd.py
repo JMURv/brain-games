@@ -1,6 +1,7 @@
 import prompt
-from random import randint,choice
+from random import randint
 from math import gcd
+
 
 def main():
     print('Welcome to the Brain Games!')
@@ -10,13 +11,14 @@ def main():
     print('Find the greatest common divisor of given numbers.')
     brain_gcd(1)
 
-def brain_gcd(attempt):
-    num_1 = randint(1,100)
-    num_2 = randint(1, 100)
-    question = prompt.string(f'Question: {num_1} {num_2}\n')
-    correct = str(gcd(num_1, num_2))
-    check(question, correct, attempt)
 
+def brain_gcd(attempt):
+    num_1 = randint(1, 100)
+    num_2 = randint(1, 100)
+    print(f'Question: {num_1} {num_2}\n')
+    answer = prompt.string('Your answer:')
+    correct = str(gcd(num_1, num_2))
+    check(answer, correct, attempt)
 
 
 def check(answer, correct, attempt):
@@ -31,9 +33,6 @@ def check(answer, correct, attempt):
     else:
         print(f"{answer} is wrong answer ;(. Correct answer was {correct}."
               f"\nLet's try again, {name}!")
-
-
-
 
 
 if __name__ == '__main__':
