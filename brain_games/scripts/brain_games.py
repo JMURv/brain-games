@@ -5,7 +5,7 @@ import prompt
 # from brain_games.games.brain_calc import main
 
 
-def engine():
+def main():
     print('Welcome to the Brain Games!')
     global name
     name = prompt.string('May I have your name? ')
@@ -26,4 +26,4 @@ def check(answer, correct, attempt):
 
 
 if __name__ == '__main__':
-    engine()
+    main()
