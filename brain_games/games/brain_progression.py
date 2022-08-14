@@ -14,7 +14,7 @@ def main():
 def brain_progression(attempt):
     num_1 = randint(1, 10)
     num_2 = randint(40, 100)
-    step = randint(2, 10)
+    step = randint(2, 5)
 
     progression = list(range(num_1, num_2, step))
     point_num = randint(0, len(progression)-1)
