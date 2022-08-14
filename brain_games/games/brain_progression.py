@@ -21,7 +21,7 @@ def brain_progression(attempt):
     correct = str(progression[point_num])
 
     progression[point_num] = '..'
-    print(f'Question: {progression}\n')
+    print(f'Question: {str(progression)[1:-1]}\n')
     answer = prompt.string('Your answer: ')
 
     check(answer, correct, attempt)
