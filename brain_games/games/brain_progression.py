@@ -21,7 +21,11 @@ def brain_progression(attempt):
     correct = str(progression[point_num])
 
     progression[point_num] = '..'
-    print(f'Question: {str(progression)[1:-1]}\n')
+    copy_string = str(progression)[1:-1]
+    for char in copy_string:
+        if char == "'" or char == ',':
+            copy_string = copy_string.replace(char, '')
+    print(f'Question: {copy_string}\n')
     answer = prompt.string('Your answer: ')
 
     check(answer, correct, attempt)
