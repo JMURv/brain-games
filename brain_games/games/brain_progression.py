@@ -17,7 +17,7 @@ def brain_progression(attempt):
     step = randint(2, 5)
 
     progression = list(range(num_1, num_2, step))
-    point_num = randint(0, len(progression)-1)
+    point_num = randint(0, len(progression) - 1)
     correct = str(progression[point_num])
 
     progression[point_num] = '..'
