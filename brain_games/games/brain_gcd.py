@@ -23,7 +23,8 @@ def brain_gcd(attempt):
 
 def check(answer, correct, attempt):
     if attempt == 3:
-        print(f'Correct!\nCongratulations, {name}!')
+        print(f'Correct!\nCongratulations, {name}!'
+              f"\nLet's try again, {name}!")
 
     elif answer == correct:
         print('Correct!')
