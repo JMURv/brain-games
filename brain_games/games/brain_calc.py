@@ -29,10 +29,10 @@ def brain_calc(attempt):
     num_1 = randint(1, 100)
     num_2 = randint(1, 100)
     functions = {
-        '+': plus(num_1, num_2),
-        '-': minus(num_1, num_2),
-        '*': mult(num_1, num_2)
-                }
+    '+': plus(num_1, num_2),
+    '-': minus(num_1, num_2),
+    '*': mult(num_1, num_2)
+    }
     operation = choice(list(functions.keys()))
     correct = str(functions[operation])
     print(f'Question: {num_1} {operation} {num_2}\n')
