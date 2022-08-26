@@ -1,4 +1,3 @@
-import prompt
 from random import randint
 
 question = 'Answer "yes" if given number is prime. Otherwise answer "no".'
@@ -16,6 +15,5 @@ def is_prime(a):
 def brain_prime():
     num_1 = randint(1, 100)
     correct = 'yes' if is_prime(num_1) is True else 'no'
-    print(f'Question: {num_1}\n')
-    answer = prompt.string('Your answer: ')
-    return answer, correct
+    task = f'Question: {num_1}'
+    return task, correct

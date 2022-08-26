@@ -1,4 +1,3 @@
-import prompt
 from random import randint
 
 question = 'What number is missing in the progression?'
@@ -18,7 +17,5 @@ def brain_progression():
     for char in copy_string:
         if char == "'" or char == ',':
             copy_string = copy_string.replace(char, '')
-    print(f'Question: {copy_string}\n')
-    answer = prompt.string('Your answer: ')
-
-    return answer, correct
+    task = f'Question: {copy_string}'
+    return task, correct

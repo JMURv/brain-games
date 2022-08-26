@@ -1,9 +1,10 @@
-from brain_games.brain_games_main import engine
+#!/usr/bin/env python
+from brain_games.game_engine import game_start
 from brain_games.games.even import brain_even, question
 
 
 def main():
-    engine(brain_even, question)
+    game_start(brain_even, question)
 
 
 if __name__ == '__main__':
