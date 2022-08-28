@@ -1,6 +1,6 @@
 from random import randint
 
-question = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+GAME_QUESTION = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 
 def is_prime(a):
@@ -12,7 +12,7 @@ def is_prime(a):
     return d * d > a
 
 
-def brain_prime():
+def task_and_correct_answer():
     num_1 = randint(1, 100)
     correct = 'yes' if is_prime(num_1) is True else 'no'
     task = f'Question: {num_1}'

@@ -1,21 +1,19 @@
 from random import randint
 
-question = 'What number is missing in the progression?'
+GAME_QUESTION = 'What number is missing in the progression?'
 
 
-def brain_progression():
+def task_and_correct_answer():
     num_1 = randint(1, 10)
     num_2 = randint(40, 100)
     step = randint(2, 5)
 
     progression = list(range(num_1, num_2, step))
+    progression = list(map(str, progression))
     point_num = randint(0, len(progression) - 1)
     correct = str(progression[point_num])
-
     progression[point_num] = '..'
-    copy_string = str(progression)[1:-1]
-    for char in copy_string:
-        if char == "'" or char == ',':
-            copy_string = copy_string.replace(char, '')
-    task = f'Question: {copy_string}'
+
+    new_string = ' '.join(progression)
+    task = f'Question: {new_string}'
     return task, correct

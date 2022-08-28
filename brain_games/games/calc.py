@@ -1,9 +1,9 @@
 from random import randint, choice
 
-question = 'What is the result of the expression?'
+GAME_QUESTION = 'What is the result of the expression?'
 
 
-def brain_calc():
+def task_and_correct_answer():
     num_1, num_2 = randint(1, 100), randint(1, 100)
     functions = ['+', '-', '*']
     operation = choice(functions)
