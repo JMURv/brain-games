@@ -1,19 +1,18 @@
 from random import randint
 
-GAME_QUESTION = 'What number is missing in the progression?'
+QUESTION = 'What number is missing in the progression?'
 
 
-def task_and_correct_answer():
-    num_1 = randint(1, 10)
-    num_2 = randint(40, 100)
+def generate_task_and_correct_answer():
+    start = randint(1, 10)
+    end = randint(40, 100)
     step = randint(2, 5)
 
-    progression = list(range(num_1, num_2, step))
-    progression = list(map(str, progression))
+    progression = list(range(start, end, step))
     point_num = randint(0, len(progression) - 1)
     correct = str(progression[point_num])
     progression[point_num] = '..'
 
-    new_string = ' '.join(progression)
-    task = f'Question: {new_string}'
+    new_string = ' '.join(map(str, progression))
+    task = new_string
     return task, correct

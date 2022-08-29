@@ -7,10 +7,10 @@ def start(game):
     print('Welcome to the Brain Games!')
     name = prompt.string('May I have your name? ')
     print(f'Hello, {name}!')
-    print(game.GAME_QUESTION)
-    for _round in range(ROUNDS):
-        question, correct = game.task_and_correct_answer()
-        print(question)
+    print(game.QUESTION)
+    for _ in range(ROUNDS):
+        question, correct = game.generate_task_and_correct_answer()
+        print(f'Question: {question}')
         answer = prompt.string('Your answer: ')
 
         if answer != correct:
