@@ -1,6 +1,6 @@
 from random import randint
 
-QUESTION = 'What number is missing in the progression?'
+RULES = 'What number is missing in the progression?'
 
 
 def generate_task_and_correct_answer():
@@ -13,6 +13,5 @@ def generate_task_and_correct_answer():
     correct = str(progression[point_num])
     progression[point_num] = '..'
 
-    new_string = ' '.join(map(str, progression))
-    task = new_string
+    task = ' '.join(map(str, progression))
     return task, correct

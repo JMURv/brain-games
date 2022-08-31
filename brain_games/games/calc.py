@@ -1,6 +1,6 @@
 from random import randint, choice
 
-QUESTION = 'What is the result of the expression?'
+RULES = 'What is the result of the expression?'
 
 
 def generate_task_and_correct_answer():
